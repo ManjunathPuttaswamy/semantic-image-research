@@ -1,41 +1,66 @@
 import importlib.metadata
 
+# ---------------------------------------------------------
+# Grouped, deduplicated, and enhanced package list
+# ---------------------------------------------------------
 packages = [
+
+    # -------------------------------
     # Core project dependencies
+    # -------------------------------
     "fastapi",
     "uvicorn",
-    "streamlit",
-    "coloredlogs",
-    "pydantic",
+    "starlette",
     "requests",
+    "coloredlogs",
+    "structlog",
     "python-dotenv",
     "python-multipart",
-    
+    "typing_extensions",
+    "anyio",
+    "httpx",
+
+    # -------------------------------
     # LangChain ecosystem
+    # -------------------------------
     "langchain-core",
     "langchain-community",
     "langchain-openai",
     "langchain-experimental",
     "langchain-astradb",
     "langchain-huggingface",
-    
-    # Model / Embeddings
-    "huggingface_hub",
-    "open_clip_torch",
-    "torch",
-    "pillow",
-    "open_clip_torch",
-    "torch",
-    "python-multipart",
     "langchain-qdrant",
 
-    # Development & utilities
-    "ipython"
+    # -------------------------------
+    # Vector DB / Embedding Models
+    # -------------------------------
+    "qdrant-client",
+    "open_clip_torch",
+    "huggingface_hub",
+    "torch",
+    "pillow",
+    "numpy",
+    "opencv-python",
+
+    # -------------------------------
+    # Utilities / Dev Tools
+    # -------------------------------
+    "streamlit",
+    "ipython",
+    "nest_asyncio",
+    "tqdm"
 ]
+
+# ---------------------------------------------------------
+# Print versions
+# ---------------------------------------------------------
+print("\n🔍 Installed Package Versions:\n")
 
 for pkg in packages:
     try:
         version = importlib.metadata.version(pkg)
-        print(f"{pkg}=={version}")
+        print(f"{pkg:<20} => {version}")
     except importlib.metadata.PackageNotFoundError:
-        print(f"{pkg} (not installed)")
+        print(f"{pkg:<20} => NOT INSTALLED")
+
+print("\n✅ Version check complete!\n")

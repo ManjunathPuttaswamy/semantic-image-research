@@ -1,7 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "semantic-image-research"
 version = "0.1.0"
-description = "Add your description here"
+description = "Semantic Image Search Engine"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+
+dependencies = [
+    "fastapi==0.121.3",
+    "uvicorn==0.38.0",
+    "streamlit==1.51.0",
+    "coloredlogs==15.0.1",
+    "pydantic==2.12.4",
+    "langchain-core==0.3.80",
+    "langchain-community==0.3.31",
+    "ipython==8.37.0",
+    "requests==2.32.5",
+    "langchain-openai==0.3.35",
+    "langchain-experimental==0.3.4",
+    "pillow==12.0.0",
+    "langchain-huggingface==0.3.1",
+    "huggingface_hub==1.1.5",
+    "python-dotenv==1.2.1",
+    "langchain-astradb==0.6.1",
+    "open_clip_torch==3.2.0",
+    "torch==2.9.1",
+    "python-multipart>=0.0.6",
+    "langchain-qdrant==0.2.1",
+    "nest_asyncio==1.6.0",
+    "structlog==25.5.0"
+]
+
+authors = [
+    { name = "Manjunath Puttaswamy" }
+]
+
+license = { text = "Proprietary" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["semantic_image_search*"]
