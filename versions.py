@@ -24,6 +24,10 @@ packages = [
     "open_clip_torch",
     "torch",
     "pillow",
+    "open_clip_torch",
+    "torch",
+    "python-multipart",
+    "langchain-qdrant",
 
     # Development & utilities
     "ipython"

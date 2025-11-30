@@ -12,3 +12,4 @@ env/
 venv/
 .env
 semantic-search/
+logs/
